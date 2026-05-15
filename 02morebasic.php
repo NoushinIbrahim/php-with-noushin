@@ -53,7 +53,39 @@
         //     echo $a;
            
         // }
+        
+        $b =0;
+        do {
+            echo '<br> the value of b is ';
+            echo $languages[$b];
+            $b++;
+        }while ($b < count($languages));
 
+
+        //for
+        $e=0;
+        for ($e=0; $e <10; $e++){
+            echo '<br> the value of e is ';
+            echo $e;
+        };
+
+        foreach ($languages as $value) {
+            echo '<br> the value is ';
+            echo $value;
+        };
+
+
+        function print5(){
+            echo '<br> five';
+        }
+        print5();
+        print5();
+
+        function print_number($number){
+            echo '<br> the number is ';
+            echo $number;
+        }
+        print_number(25);
         ?>
     </div>
 
