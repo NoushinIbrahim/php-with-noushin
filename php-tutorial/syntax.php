@@ -60,13 +60,13 @@ var_dump($float);
 $boolean = true;
 var_dump($boolean);
 
-$array = ("briyani", "juice", "icecream");
+$array = array("briyani", "juice", "icecream");
 var_dump($array);
 
 //object
 class Car{
     function car(){
-        echo 'this is obj'
+        echo 'this is obj';
     }
 }
 
