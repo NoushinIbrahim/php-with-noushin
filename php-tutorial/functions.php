@@ -42,9 +42,31 @@ echo sum(6,3)
 <body>
 
 <?php
-    site_title()
+
+$brands = array('samsung', 'iphone', 'nokia', 'xyz'); //
+// $phones[10] = 'galaxy s10';
+// $phones[10] = 'galaxy s25';  index array
+// $phones[10] = 'galaxy s20';
+
+//associative array 
+$person = array('zoii' => '<br>32423', 'zunair'=>'34');
+echo $person['zoii'];
+
+echo '<br>'. $brands[0];
+
+foreach($brands as $value) {
+    echo '<br>' . $value .'<br>';
+}
 ?>
-    
+    <h2>brands</h2>
+
+    <ul>
+        <?php
+        foreach($brands as $names){
+            echo '<li>' . $names .'</li>';
+        }
+        ?>
+    </ul>
 </body>
 </html>
 
