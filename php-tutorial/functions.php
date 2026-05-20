@@ -52,6 +52,15 @@ $brands = array('samsung', 'iphone', 'nokia', 'xyz'); //
 $person = array('zoii' => '<br>32423', 'zunair'=>'34');
 echo $person['zoii'];
 
+$products = array(
+    array(1,'galaxy s10', 10, 799),
+    array(2,'<br> iphone 11', 20, 799),
+    array(3, 'nokia 6.2', 10, 499),
+
+);
+
+echo $products[1][0]. 's price is $'.$products[1][2];
+
 echo '<br>'. $brands[0];
 
 foreach($brands as $value) {
@@ -67,6 +76,42 @@ foreach($brands as $value) {
         }
         ?>
     </ul>
+    <table>
+        <thead>
+            <tr>name</tr>
+            <tr>phone</tr>
+        </thead>
+        <tbody>
+            <?php
+            foreach ($person as $x => $y) {
+                echo '<tr><td>'.$x . "</td><td>" .$y . '</td><tr>';
+            }
+            ?>
+        </tbody>
+    </table>
+    <h2><br>prodcuts array <br></h2>
+    <table>
+        <thead>
+            <tr>
+
+                <th>id</th>
+                <th>prodcut name</tr>
+                <th>stock</tr>
+                <th>price</tr>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            foreach ($products as $row) {
+                echo '<tr>';
+                    foreach($row as $col){
+                        echo '<td>' .$col. '</td';
+                    }
+                echo '</tr>'
+            }
+            ?>
+        </tbody>
+    </table>
 </body>
 </html>
 
