@@ -5,8 +5,17 @@ form
 
 
 
-$name = $email = $website = $gender = $country = $text = '';
+$name = $email = $website = $gender = $country = $text = $error = '';
 
+$nameError = $emailError = '';
+
+function clean_input($field){
+        $field = trim($field);
+        $field = stripslashes($field);
+        $field = htmlspecialchars($field);
+        return $field;
+       
+    }
 if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     $name = clean_input($_POST['name']);
     $email = clean_input($_POST['email']);
@@ -15,16 +24,17 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     $country = clean_input($_POST['country']);
     $text = clean_input($_POST['text']);
 
-    function clean_input($field){
-        $field = trim($field);
-        $field = stripslashes($field);
-        $field = htmlspecialchars($field);
-        return $field;
-       
+    
+    if (isset($name) && $name !="" && isset($email) && $email !="" && isset($country) && $country !="0") {
+        
+    if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
+        $nameError= 'only letters and white spaces are allowed';
     }
-    if (isset($name) && $name !="" && isset($email) && $email !="" && isset($gender) && $gender !="" && isset($country) && $country !="0") {
-        echo 'hello '. $name;
-       
+       if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $emailError = 'enter valid email only';
+       }
+    }else{
+        $error = 'you must fill all required fields';
     }
 
     // echo 'hola' . $name;
@@ -56,10 +66,14 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     <div class="wrap"> 
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="signup-form">  <!-- in get method data is visible in url and in post method data is not visible in url and when we use php_self echo must use htmlspecialchars and no need to use when u use external file !-->
             <div class="form-row">
-                <input type="text" name="name *" placeholder=" full name">
+                <input type="text" name="name *" value="<?php echo $name ?>" placeholder=" full name"><?php if ($nameError) {
+                    echo $nameError;
+                } ?>
             </div>
             <div class="form-row">
-                <input type="text" name="email *" placeholder="email">
+                <input type="text" name="email *" placeholder="email"><?php if ($emailError) {
+                    echo $emailError;
+                } ?>
             </div>
             <div class="form-row">
                 <input type="text" name="website" placeholder="website">
@@ -88,6 +102,13 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
             </div>
             <button>submit</button>
             <button>reset</button>
+            <div class="error-row">
+                <?php
+                if ($error) {
+                    echo '<span style = "display:block background-color: red">'.$error .'</span>';
+                }
+                ?>
+            </div>
         </form>
     </div>
 </body>
