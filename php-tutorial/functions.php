@@ -107,7 +107,7 @@ foreach($brands as $value) {
                     foreach($row as $col){
                         echo '<td>' .$col. '</td';
                     }
-                echo '</tr>'
+                echo '</tr>';
             }
             ?>
         </tbody>

@@ -6,15 +6,15 @@
 
 :root {
   color-scheme: dark;
-  --bg-top: #080b16;
-  --bg-bottom: #111528;
-  --panel: rgba(12, 14, 26, 0.72);
-  --panel-border: rgba(255, 255, 255, 0.1);
-  --text: #f6ecff;
-  --muted: #b9b4d6;
-  --accent: #8c7cff;
-  --accent-2: #76d6ff;
-  --glow: rgba(156, 121, 255, 0.18);
+  --bg-top: #0f0f0f;
+  --bg-bottom: #1a1a1a;
+  --panel: rgba(20, 10, 20, 0.85);
+  --panel-border: rgba(199, 21, 133, 0.25);
+  --text: #fce4ec;
+  --muted: #ce93d8;
+  --accent: #d946a6;
+  --accent-2: #ec407a;
+  --glow: rgba(199, 21, 133, 0.25);
 }
 
 body {
@@ -23,12 +23,12 @@ body {
   background:
     radial-gradient(
       circle at top left,
-      rgba(120, 102, 255, 0.14),
+      rgba(199, 21, 133, 0.15),
       transparent 20%
     ),
     radial-gradient(
       circle at 90% 10%,
-      rgba(118, 214, 255, 0.12),
+      rgba(236, 64, 122, 0.12),
       transparent 18%
     ),
     linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
@@ -40,7 +40,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M80 0L160 80L80 160L0 80Z' stroke='%2317a7ff' stroke-opacity='0.04'/%3E%3C/g%3E%3C/svg%3E")
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M80 0L160 80L80 160L0 80Z' stroke='%23d946a6' stroke-opacity='0.04'/%3E%3C/g%3E%3C/svg%3E")
     center/320px auto repeat;
   opacity: 0.16;
   pointer-events: none;
@@ -54,12 +54,12 @@ body::after {
   background:
     radial-gradient(
       circle at 20% 20%,
-      rgba(255, 255, 255, 0.06),
+      rgba(236, 64, 122, 0.08),
       transparent 20%
     ),
     radial-gradient(
       circle at 80% 80%,
-      rgba(118, 214, 255, 0.08),
+      rgba(199, 21, 133, 0.08),
       transparent 18%
     );
   pointer-events: none;
@@ -77,9 +77,9 @@ body::after {
   width: min(540px, 100%);
   padding: 38px 34px;
   border-radius: 32px;
-  background: rgba(255, 182, 231, 0.15);
-  border: 1px solid rgba(255, 141, 204, 0.22);
-  box-shadow: 0 34px 70px rgba(255, 114, 192, 0.14);
+  background: rgba(199, 21, 133, 0.12);
+  border: 1px solid rgba(217, 70, 166, 0.35);
+  box-shadow: 0 34px 70px rgba(199, 21, 133, 0.18);
   backdrop-filter: blur(24px);
   transition:
     transform 0.35s ease,
@@ -90,9 +90,9 @@ body::after {
 
 .signup-form:hover {
   transform: translateY(-6px);
-  border-color: rgba(255, 141, 204, 0.35);
-  box-shadow: 0 50px 100px rgba(255, 105, 180, 0.24);
-  background: rgba(255, 182, 231, 0.22);
+  border-color: rgba(236, 64, 122, 0.45);
+  box-shadow: 0 50px 100px rgba(217, 70, 166, 0.28);
+  background: rgba(217, 70, 166, 0.18);
 }
 
 .form-row {
@@ -100,7 +100,7 @@ body::after {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  color: #ffe5f5;
+  color: #f8bbd0;
   font-weight: 600;
 }
 
@@ -116,7 +116,7 @@ body::after {
   font-size: 0.95rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #ffcee8;
+  color: #f48fb1;
 }
 
 .radio-option {
@@ -125,8 +125,8 @@ body::after {
   gap: 10px;
   padding: 12px 18px;
   border-radius: 18px;
-  border: 1px solid rgba(255, 128, 184, 0.18);
-  background: rgba(255, 182, 231, 0.12);
+  border: 1px solid rgba(217, 70, 166, 0.25);
+  background: rgba(199, 21, 133, 0.15);
   color: #fff;
   cursor: pointer;
   transition:
@@ -138,13 +138,13 @@ body::after {
 
 .radio-option:hover {
   transform: translateY(-1px);
-  border-color: rgba(255, 107, 180, 0.35);
-  background: rgba(255, 182, 231, 0.22);
-  box-shadow: 0 18px 40px rgba(255, 119, 183, 0.15);
+  border-color: rgba(236, 64, 122, 0.45);
+  background: rgba(236, 64, 122, 0.22);
+  box-shadow: 0 18px 40px rgba(217, 70, 166, 0.18);
 }
 
 .form-row input[type="radio"] {
-  accent-color: #ff8ec0;
+  accent-color: #d946a6;
   width: 18px;
   height: 18px;
   margin: 0;
@@ -157,13 +157,13 @@ body::after {
   width: 100%;
   padding: 18px 20px;
   border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(217, 70, 166, 0.25);
+  background: rgba(199, 21, 133, 0.1);
   color: #fff;
   font-size: 1rem;
   outline: none;
   backdrop-filter: blur(16px);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 1px 1px rgba(236, 64, 122, 0.05);
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
@@ -181,18 +181,18 @@ body::after {
 .form-row input[type="url"]:focus,
 .form-row select:focus {
   transform: translateY(-2px);
-  border-color: rgba(255, 146, 223, 0.45);
-  box-shadow: 0 20px 45px rgba(255, 105, 180, 0.18);
+  border-color: rgba(236, 64, 122, 0.55);
+  box-shadow: 0 20px 45px rgba(217, 70, 166, 0.22);
   backdrop-filter: blur(20px);
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(217, 70, 166, 0.15);
 }
 
 .form-row input::placeholder {
-  color: rgba(255, 225, 250, 0.75);
+  color: rgba(248, 187, 208, 0.75);
 }
 
 .form-row input[type="radio"] {
-  accent-color: #ff93d1;
+  accent-color: #ec407a;
   margin-right: 8px;
 }
 
@@ -206,10 +206,10 @@ body::after {
   background-image:
     linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.16),
-      rgba(255, 255, 255, 0.08)
+      rgba(236, 64, 122, 0.16),
+      rgba(236, 64, 122, 0.08)
     ),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath fill='%23ffcee8' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath fill='%23f48fb1' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
   background-repeat: no-repeat, no-repeat;
   background-position:
     right 18px center,
@@ -220,8 +220,8 @@ body::after {
 }
 
 .form-row select option {
-  color: #4c1133;
-  background: rgba(255, 224, 243, 0.96);
+  color: #fff;
+  background: rgba(60, 20, 45, 0.96);
 }
 
 .container {
@@ -248,12 +248,12 @@ body::after {
   background:
     radial-gradient(
       circle at 30% 20%,
-      rgba(140, 124, 255, 0.18),
+      rgba(199, 21, 133, 0.18),
       transparent 24%
     ),
     radial-gradient(
       circle at 75% 80%,
-      rgba(118, 214, 255, 0.12),
+      rgba(236, 64, 122, 0.12),
       transparent 22%
     );
   filter: blur(40px);
@@ -269,10 +269,10 @@ body::after {
   font-size: clamp(2rem, 3vw, 3.2rem);
   letter-spacing: 0.06em;
   margin-bottom: 18px;
-  background: linear-gradient(120deg, #d7baff, #8c7cff 45%, #76d6ff);
+  background: linear-gradient(120deg, #f48fb1, #d946a6 45%, #ec407a);
   -webkit-background-clip: text;
   color: transparent;
-  text-shadow: 0 0 24px rgba(140, 124, 255, 0.18);
+  text-shadow: 0 0 24px rgba(217, 70, 166, 0.22);
 }
 
 .container p {
